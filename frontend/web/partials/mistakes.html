@@ -1,0 +1,20 @@
+<div class="jumbotron">
+    <h1>Популярные ошибки</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Слово для перевода</th>
+            <th>Выбранный вариант</th>
+            <th>Повторений</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="mistake in mistakes">
+            <td>{{mistake.word}}</td>
+            <td>{{mistake.option}}</td>
+            <td>{{mistake.count}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

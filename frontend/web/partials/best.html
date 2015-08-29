@@ -1,0 +1,18 @@
+<div class="jumbotron">
+    <h1>Лучшие результаты</h1>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Имя</th>
+            <th>Количество баллов</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="result in results">
+            <td>{{result.name}}</td>
+            <td>{{result.correct}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

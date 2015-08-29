@@ -1,0 +1,23 @@
+<div class="jumbotron" ng-show="!finished">
+    <div class="text-right">
+        <span class="label label-success">Правильных ответов: {{correct}}</span>
+        <span class="label label-danger">Ошибок: {{mistakes}}</span>
+    </div>
+
+    <p class="task">Как переводится слово <strong>{{question}}</strong>?</p>
+
+    <p ng-show="wrong.length > 0" class="hint">Попробуйте еще раз!</p>
+
+    <button ng-repeat="option in options" ng-class="{'btn-danger' : wrong[$index], 'btn-primary' : !wrong[$index]}" ng-click="answer($index);" type="button" class="btn btn-lg btn-block">{{option.word}}</button>
+
+</div>
+
+<div class="jumbotron" ng-show="finished">
+    <h1>Тест завершен</h1>
+
+    <p><span class="label label-success">Правильных ответов: {{correct}}</span></p>
+
+    <p><span class="label label-danger">Ошибок: {{mistakes}}</span></p>
+
+    <p>Вы можете <a href="/#/">повторить тест</a> или взглянуть на <a href="/#/best">лучшие результаты</a>.</p>
+</div>

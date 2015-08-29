@@ -1,0 +1,21 @@
+<div class="jumbotron greeting">
+    <p><h1>Как вас зовут?</h1></p>
+
+    <form ng-submit="login()" name="loginForm" id="login-form" method="post" role="form" >
+
+        <div ng-class="{ 'has-error': error['name'] && submitted }"
+             class="form-group required">
+            <input ng-model="username" type="text" class="form-control input-lg" autofocus>
+            <p class="help-block help-block-error">{{ error['name'] }}</p>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success btn-lg" name="login-button">Начать тест</button>
+        </div>
+
+        <p class="small">За каждый правильный ответ вам будет начислен 1 балл. Тест будет продолжен, пока вы не ответите на все имеющиеся вопросы или не
+        допустите 3 ошибки.</p>
+
+    </form>
+
+</div>
