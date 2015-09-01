@@ -78,7 +78,7 @@ class MistakeController extends Controller
         }
 
         $mistakes = Mistake::find()
-            ->select(['_id' => false])
+            ->select(['_id' => false, 'devToken' => false])
             ->orderBy(['count' => SORT_DESC])
             ->where(['devToken' => $devToken])
             ->limit(10)

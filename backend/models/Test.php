@@ -29,10 +29,6 @@ class Test extends ActiveRecord implements IdentityInterface
 
     public function init() {
         parent::init();
-        $this->correct = 0;
-        $this->mistakes = 0;
-        $this->tasks = array();
-        $this->finished = false;
     }
 
     public function generateTask() {

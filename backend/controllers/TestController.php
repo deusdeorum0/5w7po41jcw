@@ -112,6 +112,10 @@ class TestController extends Controller
         $model = new Test();
         $model->name = Yii::$app->request->post('name');
         $model->devToken = $devToken;
+        $model->correct = 0;
+        $model->mistakes = 0;
+        $model->tasks = array();
+        $model->finished = false;
 
         if ($model->validate()) {
             // generating token
@@ -176,7 +180,7 @@ class TestController extends Controller
         }
 
         $results = Test::find()
-            ->select(['_id' => false, 'tasks' => false, 'token' => false, 'devToken' => false])
+            ->select(['_id' => false, 'name' => true, 'correct' => true, 'mistakes' => true])
             ->where(['correct' => ['$gt' => 0]])
             ->andWhere(['devToken' => $devToken])
             ->orderBy(['correct' => SORT_DESC])
